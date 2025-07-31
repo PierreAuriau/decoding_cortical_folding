@@ -1,5 +1,7 @@
-# Decoding Cortical Folding with Deep Learning: 
-Toward Neurodevelopmental Biomarkers of Psychiatric Disorders
+<div align="center">
+# Decoding Cortical Folding with Deep Learning 
+*Toward Neurodevelopmental Biomarkers of Psychiatric Disorders*
+</div>
 
 ## Abstract
 
@@ -19,11 +21,10 @@ We built an encoder to extract meaningful representations from brain folding sha
 * Healthy Control (HC) vs Schizophrenia (SCZ)
 
 We compared several approaches:
-* Whole brain approach
-    * [without pre-training](./wholebrain_approach/without_pretraining): training the model from scratch in a supervised setting
-    * [with pre-training](./wholebrain_approach/with_pretraining): pre-training of the model on a large cohort (UK Biobank)
+* Whole brain approach: training the model from the whole brain cortical skeletons
+    * [without pre-training](./wholebrain_approach/without_pretraining): training the model from scratch (random initialisation)
+    * [with pre-training](./wholebrain_approach/with_pretraining): pre-training the model on a large cohort (UK Biobank)
 * [Regional approach](./regional_approach): aggregation of local experts on a specific brain area (based on the brain folding foundation model Champollion V0)
-___
 
 ## Datasets
 
@@ -48,7 +49,7 @@ The ROC AUC scores average over the 10-fold cross-validation are reported in the
 | HC vs SCZ | internal | 63.9 ± 6.5 | 66.3 ± 0.6 |  63.0 ± 1.4 |
 |           | external | 53.2 ± 3.6 |  57.6 ± 0.4 |  52.9 ± 2.2 |
 
-## Code
+## Running experiments
 
 To train a model:
 ``` bash
@@ -67,7 +68,7 @@ In each folder, the script are organized as follows:
 * ```dataset.py```: dataset to load data
 * ```datamanager.py```: manager that load dataset correctly
 * ```data_augmentation.py```: data augmentations for the pre-training
-* ```loss.py```: implementation of the BarlowTwins loss for the original paper
+* ```loss.py```: implementation of the BarlowTwins loss from the original paper
 * ```model.py```: torch module with fit and test method
 * ```train.py```: script to load data and train models
 * ```test.py```: script to test models
