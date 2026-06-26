@@ -1,6 +1,9 @@
 <div align="center">
-# Decoding Cortical Folding with Deep Learning 
-*Toward Neurodevelopmental Biomarkers of Psychiatric Disorders*
+
+# Decoding Cortical Folding with Deep Learning
+
+**Toward Neurodevelopmental Biomarkers of Psychiatric Disorders**
+
 </div>
 
 ## Abstract
